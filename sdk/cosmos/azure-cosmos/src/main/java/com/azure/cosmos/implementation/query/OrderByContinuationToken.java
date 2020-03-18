@@ -73,8 +73,8 @@ public final class OrderByContinuationToken extends JsonSerializable {
             parsed = true;
         } catch (Exception ex) {
             logger.debug(
-                    "Received exception {} when trying to parse: {}", 
-                    ex.getMessage(), 
+                    "Received exception {} when trying to parse: {}",
+                    ex.getMessage(),
                     serializedOrderByContinuationToken);
             parsed = false;
             outOrderByContinuationToken.v = null;
@@ -112,7 +112,7 @@ public final class OrderByContinuationToken extends JsonSerializable {
     }
 
     public boolean getInclusive() {
-        return super.getBoolean(InclusivePropertyName);
+        return Boolean.TRUE.equals(super.getBoolean(InclusivePropertyName));
     }
 
     private void setCompositeContinuationToken(CompositeContinuationToken compositeContinuationToken) {
